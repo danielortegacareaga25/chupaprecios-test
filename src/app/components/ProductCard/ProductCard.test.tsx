@@ -1,6 +1,5 @@
-import React from "react";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
-import { ProductCard } from "./ProductCard"; // Asegúrate de que la ruta sea correcta
+import { ProductCard } from "./ProductCard";
 
 describe("<ProductCard/>", () => {
   const mockProps = {
