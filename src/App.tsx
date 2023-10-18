@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useAppDispatch } from "./app/store/hook";
+import { getToken } from "./app/store/reducers/thunks/authThunk";
+import { allRoutes } from "./app/navigation";
+import { RouterProvider } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = () => {
+  const dispatch = useAppDispatch();
 
-export default App;
+  useEffect(() => {
+    // dispatch(getToken());
+  }, []);
+
+  return <RouterProvider router={allRoutes} />;
+};
