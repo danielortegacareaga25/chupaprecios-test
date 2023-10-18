@@ -24,7 +24,7 @@ export const CatalogPage = () => {
   }, [favorites]);
   return (
     <Box>
-      <Header counter={counterItems} />
+      <Header data-testid="header" counter={counterItems} />
       <Grid container spacing={1} pt={10}>
         {items.map(({ title, thumbnail, asin }) => (
           <ProductCard

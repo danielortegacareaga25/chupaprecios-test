@@ -9,6 +9,7 @@ type Props = {
 export const Header: FC<Props> = ({ counter }) => {
   return (
     <Box
+      data-testid="header"
       display={"flex"}
       justifyContent={"flex-end"}
       padding={"20px"}
