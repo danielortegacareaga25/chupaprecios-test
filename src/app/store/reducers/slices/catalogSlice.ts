@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Product } from "../../../interfaces/catalog.interface";
-import { dataMock } from "../../../data";
 import { getCatalog } from "../thunks/catalogThunk";
 
 type TypeInitialState = {
@@ -10,7 +9,7 @@ type TypeInitialState = {
 };
 
 const initialState: TypeInitialState = {
-  data: dataMock[0].data.items,
+  data: [],
   loading: false,
   error: null,
 };

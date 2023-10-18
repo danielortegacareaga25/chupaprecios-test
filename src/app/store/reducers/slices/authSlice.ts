@@ -8,8 +8,7 @@ type TypeInitialState = {
 };
 
 const initialState: TypeInitialState = {
-  bearerToken:
-    "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjE2LCJ1dHlwaWQiOjIsImlhdCI6MTY5NzU4Mjc1NSwiZXhwIjoxNjk3NTg2MzU1fQ.dwjMd3dKOQYSL_3y4-MwC0iFc7Phe1KoNTZI-mTWDZs",
+  bearerToken: null,
   loading: false,
   error: null,
 };
