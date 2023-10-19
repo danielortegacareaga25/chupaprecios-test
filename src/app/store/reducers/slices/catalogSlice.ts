@@ -25,7 +25,8 @@ const catalogSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(getCatalog.fulfilled, (state, action) => {
-      state.data = action.payload.data.items;
+      console.log("actions,", action.payload);
+      state.data = action.payload[0].data.items;
       state.loading = false;
     });
     builder.addCase(getCatalog.rejected, (state, action) => {

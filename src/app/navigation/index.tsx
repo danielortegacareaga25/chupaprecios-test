@@ -1,12 +1,7 @@
 import { createBrowserRouter, useRouteError } from "react-router-dom";
 import { PrivateRoute } from "./privateRoute";
-import { LoginPage } from "../pages/Login";
+import { LoginPage } from "../pages/Login/Login";
 import { CatalogPage } from "../pages/Catalog/Catalog";
-
-const Catalog = () => {
-  // Coloca aquí el contenido de tu página de inicio de sesión
-  return <div>Catalog Page</div>;
-};
 
 export default function ErrorPage() {
   const error = useRouteError() as any;

@@ -4,7 +4,7 @@ import { api } from "../../../api";
 
 export const FETCH_CATALOG = "events/getCatalog";
 
-export const getCatalog = createAsyncThunk<CatalogResponse>(
+export const getCatalog = createAsyncThunk<CatalogResponse[]>(
   FETCH_CATALOG,
   async () => {
     const { data } = await api.get(
