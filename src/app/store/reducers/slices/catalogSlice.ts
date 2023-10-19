@@ -13,7 +13,9 @@ const initialState: TypeInitialState = {
   loading: false,
   error: null,
 };
-
+/**
+ * Reducer to catalog  store
+ */
 const catalogSlice = createSlice({
   name: "catalogSlice",
   initialState,

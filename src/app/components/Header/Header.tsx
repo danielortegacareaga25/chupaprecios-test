@@ -6,6 +6,11 @@ type Props = {
   counter: number;
 };
 
+/**
+ * Component to add in the top in the page to show card icon inside
+ * @param counter is the number to show in cart icon
+ * @returns
+ */
 export const Header: FC<Props> = ({ counter }) => {
   return (
     <Box

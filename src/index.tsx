@@ -5,6 +5,9 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { initializeStore } from "./app/store";
 
+/**
+ * get store global
+ */
 const store = initializeStore();
 
 const root = ReactDOM.createRoot(

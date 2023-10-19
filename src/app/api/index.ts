@@ -1,10 +1,16 @@
 import axios from "axios";
 import { FETCH_TOKEN } from "../store/reducers/thunks/authThunk";
 
+/**
+ * Create an instance of axios base
+ */
 const api = axios.create({
   baseURL: "https://chupaprecios.com.mx/rest/V1",
 });
 
+/**
+ * Middleware to add interceptors in axios when we have the token
+ */
 export const axiosMiddleware = (_: any) => (next: any) => (action: any) => {
   if (action.type === `${FETCH_TOKEN}/fulfilled`) {
     setInterceptors(action.payload);

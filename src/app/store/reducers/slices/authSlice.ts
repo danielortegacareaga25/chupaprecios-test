@@ -13,6 +13,9 @@ const initialState: TypeInitialState = {
   error: null,
 };
 
+/**
+ * Reducer to manage auth store
+ */
 const authSlice = createSlice({
   name: "authSlice",
   initialState,

@@ -33,6 +33,9 @@ const deleteCartCase: CaseReducer<TypeInitialState, PayloadAction<string>> = (
   state.items = state.items.filter((item) => item.asin !== payload);
 };
 
+/**
+ * Reducer to cart  store
+ */
 const cartSlice = createSlice({
   name: "cartSlice",
   initialState,
