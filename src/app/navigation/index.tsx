@@ -5,7 +5,6 @@ import { CatalogPage } from "../pages/Catalog/Catalog";
 
 export default function ErrorPage() {
   const error = useRouteError() as any;
-  console.error(error);
 
   return (
     <div id="error-page">

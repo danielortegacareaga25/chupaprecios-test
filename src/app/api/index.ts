@@ -14,7 +14,6 @@ export const axiosMiddleware = (_: any) => (next: any) => (action: any) => {
 };
 
 export const setInterceptors = (token: any) => {
-  console.log("store", token);
   if (!token) {
     return;
   }
