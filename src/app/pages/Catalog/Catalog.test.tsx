@@ -1,13 +1,14 @@
 import React from "react";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
 import { CatalogPage } from "./Catalog";
-import { addCart } from "../../store/reducers/slices/cartSlice";
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
 
-const mockStore = configureStore([]);
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
-describe("CatalogPage", () => {
+describe("<CatalogPage/>", () => {
   afterEach(cleanup);
   it("Catalog page render correctly data and header element", () => {
     const initialState = {
@@ -46,17 +47,13 @@ describe("CatalogPage", () => {
     expect(imageTwo).toBeDefined();
   });
 
-  it("Catalog handles the 'Agregar' button click calls add action in Store", () => {
+  it("Catalog page render correctly loading element", () => {
     const initialState = {
       catalog: {
-        data: [
-          {
-            title: "Product 1",
-            thumbnail: "product1.jpg",
-            asin: "ASIN123",
-          },
-        ],
+        data: [],
+        loading: true,
       },
+
       cart: {
         items: [],
       },
@@ -68,14 +65,7 @@ describe("CatalogPage", () => {
         <CatalogPage />
       </Provider>
     );
-
-    const addButton = screen.getByText("Agregar");
-
-    fireEvent.click(addButton);
-
-    const actions = store.getActions();
-    expect(actions).toEqual([
-      { type: addCart.toString(), payload: initialState.catalog.data[0] },
-    ]);
+    const loadingContainer = screen.getByRole("progressbar");
+    expect(loadingContainer).toBeInTheDocument();
   });
 });

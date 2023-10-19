@@ -25,14 +25,14 @@ describe("catalogReducer", () => {
       error: null,
     };
 
-    const responseData = { data: { items: [{ id: 1, name: "Product 1" }] } };
+    const responseData = [{ data: { items: [{ id: 1, name: "Product 1" }] } }];
 
     const action = { type: getCatalog.fulfilled.type, payload: responseData };
     const nextState = catalogReducer(initialState, action);
 
     expect(nextState.loading).toBe(false);
     expect(nextState.error).toBe(null);
-    expect(nextState.data).toEqual(responseData.data.items);
+    expect(nextState.data).toEqual(responseData[0].data.items);
   });
 
   it("Should handle getCatalog.rejected", () => {
